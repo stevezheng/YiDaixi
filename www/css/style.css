@@ -1,0 +1,16 @@
+.pull-right {
+    float: right;
+}
+
+.balanced-light-bg {
+    background: #d6f3ef;
+}
+
+.white-border {
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+}
+
+.white-color {
+    color: #ffffff;
+}
