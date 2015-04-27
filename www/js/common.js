@@ -1,3 +1,4 @@
 angular.module('app.common', [])
-  .controller('HomeCtrl', function($scope) {});
+  .controller('HomeCtrl', function($scope) {
+  });
 

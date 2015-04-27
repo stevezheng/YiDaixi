@@ -28,10 +28,11 @@ angular.module('app', ['ionic', 'app.common', 'app.item', 'app.order', 'app.acco
     // Each state's controller can be found in controllers.js
 
     //这里对android进行一些配置,为了保证ios和安卓平台显示效果一致
-    $ionicConfigProvider.tabs.position('bottom'); //other values: top
-    $ionicConfigProvider.tabs.style('standard'); //other values: top
-    $stateProvider
+    $ionicConfigProvider.tabs.position('bottom');
+    $ionicConfigProvider.tabs.style('standard');
+    $ionicConfigProvider.navBar.alignTitle('center');
 
+    $stateProvider
       // setup an abstract state for the tabs directive
       .state('tab', {
         url: "/tab",
