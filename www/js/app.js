@@ -52,6 +52,26 @@ angular.module('app', ['ionic', 'app.common', 'app.item', 'app.order', 'app.acco
         }
       })
 
+      .state('tab.item-piece', {
+        url: '/item/piece',
+        views: {
+          'tab-home': {
+            templateUrl: 'templates/item-piece.html',
+            controller: 'ItemPieceCtrl'
+          }
+        }
+      })
+
+      .state('tab.item-bag', {
+        url: '/item/bag',
+        views: {
+          'tab-home': {
+            templateUrl: 'templates/item-bag.html',
+            controller: 'ItemBagCtrl'
+          }
+        }
+      })
+
       .state('tab.order', {
         url: '/order',
         views: {
