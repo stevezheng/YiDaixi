@@ -1,8 +1,12 @@
-<ion-view view-title="会员中心">
+<ion-header-bar class="bar-balanced bar bar-header">
+    <h1 class="title">会员中心</h1>
+</ion-header-bar>
+<ion-view>
     <ion-content>
         <div class="row balanced-light-bg">
             <div class="col col-20 col-offset-10">
-                <img src="/img/ionic.png" alt="" width="100%"/>
+                <i class="icon ion-android-person" style="font-size: 60px"></i>
+                <!--<img src="/img/ionic.png" alt="" width="100%"/>-->
             </div>
             <div class="col col-60">
                 <p>13812341234</p>
@@ -11,7 +15,8 @@
             <div class="col col-10"></div>
         </div>
         <div class="row balanced-light-bg" style="padding-bottom: 20px;">
-            <div class="col col-40 col-offset-10 white-border" style="padding: 10px;">
+            <div class="col col-40 col-offset-10 white-border"
+                 style="padding: 10px;">
               <span>
                   余额:
               </span>
@@ -29,6 +34,31 @@
               </span>
             </div>
             <div class="col col-10"></div>
+        </div>
+        <div class="list">
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-card"></i>
+                绑定实体卡
+                <i class="icon ion-ios-arrow-forward"></i>
+            </a>
+
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-ios-location-outline"></i>
+                常用地址
+                <i class="icon ion-ios-arrow-forward"></i>
+            </a>
+
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-android-menu"></i>
+                更多
+                <i class="icon ion-ios-arrow-forward"></i>
+            </a>
+
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-android-favorite-outline"></i>
+                爱心捐赠
+                <i class="icon ion-ios-arrow-forward"></i>
+            </a>
         </div>
     </ion-content>
 </ion-view>

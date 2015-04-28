@@ -1,16 +1,82 @@
-<ion-view view-title="Chats">
+<ion-view>
+    <ion-header-bar class="bar-balanced bar bar-header">
+        <div class="row order-button-bar">
+            <a class="col"></a>
+            <a class="col text-center">
+                <span class="active">
+                服务中
+                </span>
+            </a>
+            <a class="col text-center">
+                <span>
+                已完成
+                </span>
+            </a>
+            <a class="col"></a>
+        </div>
+    </ion-header-bar>
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+      <div class="list order-list">
+          <a class="item item-avatar" href="#">
+              <img src="/img/order/progress-1.png" width="100%">
+              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
+              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
+              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
+          </a>
+          <div class="button-bar">
+              <a class="button button-balanced">取消订单</a>
+              <a class="button button-balanced">暂无法支付</a>
+          </div>
+      </div>
+      <div class="list order-list">
+          <a class="item item-avatar" href="#">
+              <img src="/img/order/progress-1.png" width="100%">
+              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
+              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
+              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
+          </a>
+          <div class="button-bar">
+              <a class="button button-balanced">取消订单</a>
+              <a class="button button-balanced">暂无法支付</a>
+          </div>
+      </div>
+      <div class="list order-list">
+          <a class="item item-avatar" href="#">
+              <img src="/img/order/progress-1.png" width="100%">
+              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
+              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
+              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
+          </a>
+          <div class="button-bar">
+              <a class="button button-balanced">取消订单</a>
+              <a class="button button-balanced">暂无法支付</a>
+          </div>
+      </div>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+      <div class="list order-list">
+          <a class="item item-avatar" href="#">
+              <img src="/img/order/progress-1.png" width="100%">
+              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
+              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
+              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
+          </a>
+          <div class="button-bar">
+              <a class="button button-balanced">取消订单</a>
+              <a class="button button-balanced">暂无法支付</a>
+          </div>
+      </div>
+
+      <div class="list order-list">
+          <a class="item item-avatar" href="#">
+              <img src="/img/order/progress-1.png" width="100%">
+              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
+              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
+              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
+          </a>
+          <div class="button-bar">
+              <a class="button button-balanced">取消订单</a>
+              <a class="button button-balanced">暂无法支付</a>
+          </div>
+      </div>
   </ion-content>
 </ion-view>
