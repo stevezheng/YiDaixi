@@ -1,3 +1,4 @@
+AV.initialize('9rtdr38i5zj64xo020m8x4m0g3f1e6evjkjbospon7lrs0ea', 'wsu2o1gnk2v5flopz8tg1qyb1ogwnvh8isae958z4fzzrbkp');
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -5,7 +6,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.common', 'app.item', 'app.order', 'app.user'])
+angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', 'app.user'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

@@ -1,5 +1,10 @@
 YikeModule
 
-.factory('$yikeUser', ['$scope', function($scope) {
-
+.factory('$yikeUser', ['$rootScope', function($rootScope) {
+    return AV.Object.extend('_User', {
+      sayHi: function() {
+        console.log('hi');
+      }
+    }, {
+    });
   }])
