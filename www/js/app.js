@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.common', 'app.item', 'app.order', 'app.account'])
+angular.module('app', ['ionic', 'app.common', 'app.item', 'app.order', 'app.user'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -91,22 +91,22 @@ angular.module('app', ['ionic', 'app.common', 'app.item', 'app.order', 'app.acco
         }
       })
 
-      .state('tab.account', {
-        url: '/account',
+      .state('tab.user', {
+        url: '/user',
         views: {
-          'tab-account': {
-            templateUrl: 'templates/tab-account.html',
-            controller: 'AccountCtrl'
+          'tab-user': {
+            templateUrl: 'templates/tab-user.html',
+            controller: 'UserCtrl'
           }
         }
       })
 
-      .state('tab.account-login', {
-        url: '/account-login',
+      .state('tab.user-login', {
+        url: '/user-login',
         views: {
-          'tab-account': {
-            templateUrl: 'templates/account-login.html',
-            controller: 'AccountLoginCtrl'
+          'tab-user': {
+            templateUrl: 'templates/user-login.html',
+            controller: 'UserLoginCtrl'
           }
         }
       });
