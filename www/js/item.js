@@ -11,7 +11,7 @@ angular.module('app.item', [])
     };
 
     $scope.back = function() {
-      $ionicHistory.goBack();
+      $location.path('/tab/home');
     };
 
     $scope.open = function(path) {
@@ -21,7 +21,7 @@ angular.module('app.item', [])
   .controller('ItemBagCtrl', function($scope, $ionicHistory, $location, $yikeUser) {
     $yikeUser.permission();
     $scope.back = function() {
-      $ionicHistory.goBack();
+      $location.path('/tab/home');
     };
 
     $scope.open = function(path) {
