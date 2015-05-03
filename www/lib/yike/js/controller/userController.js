@@ -19,10 +19,7 @@ YikeModule
 
     $scope.user = {};
 
-    $scope.login = function () {
-      var username = $scope.user.username || ''
-        , password = $scope.user.password || '';
-
+    $scope.login = function (username, password) {
       if (!username) {
         alertPopup('提示', '请输入用户名');
         return false;
@@ -65,11 +62,7 @@ YikeModule
 
     $scope.user = {};
 
-    $scope.reg = function () {
-      var username = $scope.user.username || ''
-        , password = $scope.user.password || ''
-        , rPassword = $scope.user.rPassword || ''
-
+    $scope.reg = function (username, password, rPassword) {
       if (!username) {
         alertPopup('提示', '请输入用户名');
         return false;

@@ -14,7 +14,7 @@
                 <input type="password" placeholder="确认密码" ng-model="user.rPassword">
             </label>
         </div>
-        <button class="button button-balanced button-block" ng-click="reg()">
+        <button class="button button-balanced button-block" ng-click="reg(user.username, user.password, user.rPassword)">
             注册
         </button>
         <a class="button button-balanced button-block" href="#/user-login">登录</a>
