@@ -1,3 +1,9 @@
 angular.module('app.user', [])
-  .controller('UserCtrl', ['$scope', '$yikeUser', function($scope, $yikeUser) {
-  }])
+  .controller('UserCtrl', function($scope, $yikeUser, $location) {
+    $yikeUser.permission();
+
+    $scope.logout = function() {
+      $yikeUser.logOut();
+      $location.path('user-login');
+    }
+  })

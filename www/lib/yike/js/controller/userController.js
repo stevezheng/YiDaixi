@@ -1,6 +1,6 @@
 YikeModule
   .controller('$yikeUserCtrl', ['$scope', '$yikeUser', function ($scope, $yikeUser) {
-    console.log($scope.cUser);
+    $yikeUser.permission();
   }])
   .controller('$yikeUserLoginCtrl', ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser', function ($rootScope, $scope, $ionicPopup, $timeout, $location, $yikeUser) {
     /**

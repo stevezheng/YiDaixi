@@ -1,2 +1,4 @@
 angular.module('app.order', [])
-  .controller('OrderCtrl', function($scope) {});
+  .controller('OrderCtrl', function($scope, $yikeUser) {
+    $yikeUser.permission();
+  });
