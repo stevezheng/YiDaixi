@@ -6,79 +6,69 @@
             </a>
             <a class="col text-center">
                 <span class="active">
-                服务中
+                    按件计价
                 </span>
             </a>
-            <a class="col text-center">
+            <a class="col text-center" ng-click="open('/tab/item/bag')">
                 <span>
-                已完成
+                    按袋计价
                 </span>
             </a>
             <a class="col"></a>
         </div>
     </ion-header-bar>
   <ion-content>
-      <div class="list order-list">
-          <a class="item item-avatar" href="#">
-              <img src="img/order/progress-1.png" width="100%">
-              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
-              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
-              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
-          </a>
-          <div class="button-bar">
-              <a class="button button-balanced">取消订单</a>
-              <a class="button button-balanced">暂无法支付</a>
+      <div class="row balanced-light-bg">
+          <div class="col">
+              <div class="button-bar">
+                  <a class="button" ng-class="tabStatus==9?'button-balanced':'button-stable'" ng-click="tabStatus = 9">9元/件</a>
+                  <a class="button" ng-class="tabStatus==19?'button-balanced':'button-stable'" ng-click="tabStatus = 19">19元/件</a>
+                  <a class="button" ng-class="tabStatus==29?'button-balanced':'button-stable'" ng-click="tabStatus = 29">29元/件</a>
+              </div>
           </div>
       </div>
-      <div class="list order-list">
-          <a class="item item-avatar" href="#">
-              <img src="img/order/progress-1.png" width="100%">
-              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
-              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
-              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
-          </a>
-          <div class="button-bar">
-              <a class="button button-balanced">取消订单</a>
-              <a class="button button-balanced">暂无法支付</a>
+      <div class="row" ng-show="tabStatus==9">
+          <div class="col">
+              <img src="img/item/Piece_9_a.png" alt="" width="100%" ng-click="addItem(9)"/>
           </div>
       </div>
-      <div class="list order-list">
-          <a class="item item-avatar" href="#">
-              <img src="img/order/progress-1.png" width="100%">
-              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
-              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
-              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
-          </a>
-          <div class="button-bar">
-              <a class="button button-balanced">取消订单</a>
-              <a class="button button-balanced">暂无法支付</a>
+      <div class="row" ng-show="tabStatus==9">
+          <div class="col">
+              <img src="img/item/Piece_9_b.png" alt="" width="100%" ng-click="addItem(9)"/>
           </div>
       </div>
-
-      <div class="list order-list">
-          <a class="item item-avatar" href="#">
-              <img src="img/order/progress-1.png" width="100%">
-              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
-              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
-              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
-          </a>
-          <div class="button-bar">
-              <a class="button button-balanced">取消订单</a>
-              <a class="button button-balanced">暂无法支付</a>
+      <div class="row" ng-show="tabStatus==9">
+          <div class="col">
+              <img src="img/item/Piece_9_c.png" alt="" width="100%" ng-click="addItem(9)"/>
           </div>
       </div>
-
-      <div class="list order-list">
-          <a class="item item-avatar" href="#">
-              <img src="img/order/progress-1.png" width="100%">
-              <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: 154342323243</p>
-              <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">29元</span></p>
-              <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: 2015-04-28 18:00-20:00</p>
-          </a>
-          <div class="button-bar">
-              <a class="button button-balanced">取消订单</a>
-              <a class="button button-balanced">暂无法支付</a>
+      <div class="row" ng-show="tabStatus==19">
+          <div class="col">
+              <img src="img/item/Piece_19_a.png" alt="" width="100%" ng-click="addItem(19)"/>
+          </div>
+      </div>
+      <div class="row" ng-show="tabStatus==19">
+          <div class="col">
+              <img src="img/item/Piece_19_b.png" alt="" width="100%" ng-click="addItem(19)"/>
+          </div>
+      </div>
+      <div class="row" ng-show="tabStatus==19">
+          <div class="col">
+              <img src="img/item/Piece_19_c.png" alt="" width="100%" ng-click="addItem(19)"/>
+          </div>
+      </div>
+      <div class="row" ng-show="tabStatus==29">
+          <div class="col">
+              <img src="img/item/Piece_29_a.jpg" alt="" width="100%" ng-click="addItem(29)"/>
           </div>
       </div>
   </ion-content>
 </ion-view>
+<div class="bar bar-footer bar-balanced" style="margin-bottom: 47px;">
+    <div class="row">
+        <div class="col">总价:{{money}}元({{piece}}件)</div>
+        <a class="col text-right" ng-click="order()">
+            下单
+        </a>
+    </div>
+</div>
