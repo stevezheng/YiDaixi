@@ -97,20 +97,22 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         views: {
           'tab-user': {
             templateUrl: 'templates/tab-user.html',
-            controller: 'UserCtrl'
+            controller: '$yikeUserCtrl'
           }
         }
       })
 
-      .state('tab.user-login', {
+      .state('user-login', {
         url: '/user-login',
-        views: {
-          'tab-user': {
             templateUrl: 'templates/user-login.html',
-            controller: 'UserLoginCtrl'
-          }
-        }
-      });
+            controller: '$yikeUserLoginCtrl'
+      })
+
+      .state('user-reg', {
+        url: '/user-reg',
+            templateUrl: 'templates/user-reg.html',
+            controller: '$yikeUserRegCtrl'
+      })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/home');
