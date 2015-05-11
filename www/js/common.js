@@ -1,8 +1,8 @@
 angular.module('app.common', [])
-  .controller('HomeCtrl', function($scope, $yikeUser) {
+  .controller('HomeCtrl', function($scope, $yikeUser, $location) {
     $yikeUser.permission();
     $scope.open= function(target) {
-      location.hash = target;
+      $location.path(target);
     };
   });
 
