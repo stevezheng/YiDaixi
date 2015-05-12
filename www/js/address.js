@@ -10,6 +10,9 @@ angular.module('app.address', [])
     $yikeUser.permission();
 
     $scope.open = function (target) {
+      D('address').add({'a': 'a', 'b': 'c'}).then(function(res) {
+        console.log(res);
+      });
       $location.path(target);
     }
   });
