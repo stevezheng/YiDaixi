@@ -6,44 +6,38 @@
     <ion-content class="padding">
         <div class="row">
             <div class="col">姓名</div>
-            <div class="col"><input type="text" placeholder="请填写姓名" style="border: 1px solid #e4e5e7; padding: 5px;"/></div>
+            <div class="col"><input type="text" ng-model="data.name" placeholder="请填写姓名" style="border: 1px solid #e4e5e7; padding: 5px;"/></div>
         </div>
 
         <div class="row">
             <div class="col">手机号码</div>
-            <div class="col"><input type="text" placeholder="请填写手机号码" style="border: 1px solid #e4e5e7; padding: 5px;"/></div>
+            <div class="col"><input type="text" ng-model="data.phone" placeholder="请填写手机号码" style="border: 1px solid #e4e5e7; padding: 5px;"/></div>
         </div>
 
         <div class="row">
             <div class="col">选择城市</div>
             <div class="col">
-                <select>
-                    <option value="北京" selected>请选择城市</option>
-                    <option value="上海" >上海</option>
-                </select>
+                <select ng-options="city for city in cities" ng-model="data.city"></select>
             </div>
         </div>
 
         <div class="row">
             <div class="col">选择区域</div>
             <div class="col">
-                <select>
-                    <option value="北京" selected>请先选择城市</option>
-                    <option value="上海" >上海</option>
-                </select>
+                <select ng-options="area for area in areas" ng-model="data.area"></select>
             </div>
         </div>
 
         <div class="row">
             <div class="col">详细地址</div>
             <div class="col">
-                <textarea name="" id="" cols="19" rows="5" style="border: 1px solid #e4e5e7; padding: 5px;" placeholder="请填写详细地址"></textarea>
+                <textarea name="" ng-model="data.address" id="" cols="19" rows="5" style="border: 1px solid #e4e5e7; padding: 5px;" placeholder="请填写详细地址"></textarea>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <button class="button button-balanced button-block">保存</button>
+                <button class="button button-balanced button-block" ng-click="submit(data.name, data.phone, '福建', data.city, data.area, data.address)">保存</button>
             </div>
         </div>
     </ion-content>

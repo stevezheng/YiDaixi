@@ -44,23 +44,157 @@ AV._.mapObject = function (obj, iteratee, context) {
 };
 
 function D(model) {
-  return {
-    where: function (where) {
-    },
-    select: function () {
-    },
-    query: function (sql, parse) {
-      return AV.Query.doCloudQuery(sql, parse);
-    },
-    add: function (data) {
-      var Model = AV.Object.extend(model);
-      var instance = new Model();
+  var Model = AV.Object.extend(model);
+  var instance = new Model();
+  var q = new AV.Query(Model);
 
+  return {
+    field: function(field, revers) {
+
+    },
+
+    table: function(table, hasPrefix) {
+
+    },
+
+    limit: function(offset, length) {
+
+    },
+
+    page: function(page, listRows) {
+
+    },
+
+    union: function(union, all) {
+
+    },
+
+    join: function(join) {
+
+    },
+
+    order: function(order) {
+
+    },
+
+    alias: function(alias) {
+
+    },
+
+    having: function(str) {
+
+    },
+
+    group: function(field) {
+
+    },
+
+    distinct: function(field) {
+
+    },
+
+    where: function (where) {
+      AV._.mapObject(where, function (val, key) {
+        q.equalTo(key, val);
+      });
+
+      return q;
+    },
+
+    count: function(field) {
+
+    },
+
+    sum: function(field) {
+
+    },
+
+    min: function(field) {
+
+    },
+
+    max: function(field) {
+
+    },
+
+    avg: function(field) {
+
+    },
+
+    add: function (data) {
       AV._.mapObject(data, function (val, key) {
         instance.set(key, val);
       });
 
       return instance.save();
+    },
+
+    thenAdd:function(data, where, returnDetail) {
+
+    },
+
+    addAll: function(data) {
+
+    },
+
+    delete: function() {
+
+    },
+
+    update: function(data) {
+
+    },
+
+    select: function() {
+      return q.find();
+    },
+
+    find: function() {
+
+    },
+
+    updateInc: function(field, step) {
+
+    },
+
+    updateDec: function(field, step) {
+
+    },
+
+    getField: function(field, onlyOne) {
+
+    },
+
+    countSelect: function(options, flag) {
+
+    },
+
+    buildSql: function(options) {
+
+    },
+
+    query: function (sql, parse) {
+      return AV.Query.doCloudQuery(sql, parse);
+    },
+
+    execute: function(sql, parse) {
+
+    },
+
+    close: function() {
+
+    },
+
+    starTrans: function() {
+
+    },
+
+    commit: function() {
+
+    },
+
+    rollback: function() {
+
     }
   }
 }

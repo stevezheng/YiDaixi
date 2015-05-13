@@ -10,45 +10,33 @@
                 <div class="input-label">
                     服务日期
                 </div>
-                <select>
-                    <option selected>2015年05月11日</option>
-                    <option>2015年05月12日</option>
-                    <option>2015年05月13日</option>
-                </select>
+                <select ng-options="date for date in dates" ng-model="order.today"></select>
             </label>
             <label class="item item-input item-select">
                 <div class="input-label">
                     服务时间
                 </div>
-                <select>
-                    <option selected>18:00-20:00</option>
-                    <option>20:00-22:00</option>
-                </select>
+                <select ng-options="time for time in times" ng-model="order.now"></select>
             </label>
         </div>
 
         <ul class="list">
 
-            <li class="item item-checkbox">
-                <label class="checkbox checkbox-balanced">
-                    <input type="checkbox" checked>
-                </label>
-                <p>郑先生 18650186805</p>
-                <p>苏州 工业园 不知道</p>
-                <p class="text-right"><span>编辑</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="error">删除</span></p>
-            </li>
+            <div class="alert" ng-if="!data">数据载入中...</div>
 
-            <li class="item item-checkbox">
+            <li class="item item-checkbox" ng-repeat="d in data">
                 <label class="checkbox checkbox-balanced">
-                    <input type="checkbox">
+                    <input type="checkbox" ng-model="d.checkbox" ng-change="initCheckbox(d)">
                 </label>
-                <p>郑先生 18650186805</p>
-                <p>苏州 工业园 不知道</p>
+                <p>{{d.get('name')}} {{d.get('phone')}}</p>
+                <p>
+                    {{d.get('province')}} {{d.get('city')}} {{d.get('area')}} {{d.get('address')}}
+                </p>
                 <p class="text-right"><span>编辑</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="error">删除</span></p>
             </li>
         </ul>
     </ion-content>
 </ion-view>
 <div class="bar bar-footer bar-balanced">
-    <h1 class="title">立即下单</h1>
+    <h1 class="title" ng-click="submit(order.today, order.now, order.currentCheck)">立即下单</h1>
 </div>
