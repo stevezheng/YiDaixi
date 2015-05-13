@@ -1,5 +1,5 @@
 angular.module('app.address', [])
-  .controller('AddressCtrl', function ($scope, $yikeUser, $location, $ionicPopup) {
+  .controller('AddressCtrl', function ($rootScope, $scope, $yikeUser, $location, $ionicPopup) {
     function alertPopup(title, template) {
       return $ionicPopup.alert({
         title: title,
@@ -8,6 +8,44 @@ angular.module('app.address', [])
       });
     }
     $yikeUser.permission();
+
+    $scope.query = function() {
+      D('address')
+        .where({user: AV.User.current()})
+        .select()
+        .then(function(res) {
+          $scope.data = AV._.sortBy(res, function(item) {
+            return -item.createdAt;
+          });
+
+          try {
+            $scope.data[0].checkbox = true;
+            $scope.order.currentCheck = $scope.data[0];
+          } catch (ex) {
+            //console.error(ex);
+          }
+        })
+    }();
+
+    $rootScope.$on('addAddressEvent', function(event, msg) {
+      D('address')
+        .where({user: AV.User.current()})
+        .select()
+        .then(function(res) {
+          $scope.data = AV._.sortBy(res, function(item) {
+            return -item.createdAt;
+          });
+
+          try {
+            $scope.data[0].checkbox = true;
+            $scope.order.currentCheck = $scope.data[0];
+          } catch (ex) {
+            //console.error(ex);
+          }
+        })
+    });
+
+
 
     $scope.order = {
       today: null
@@ -30,19 +68,6 @@ angular.module('app.address', [])
 
     $scope.times = ['请选择服务时间', '08:00-10:00', '10:00-12:00', '12:00-14:00', '14:00-16:00', '16:00-18:00', '18:00-20:00', '20:00-22:00'];
     $scope.order.now = '请选择服务时间';
-
-    $scope.query = function() {
-      D('address')
-        .select()
-        .then(function(res) {
-          $scope.data = AV._.sortBy(res, function(item) {
-            return -item.createdAt;
-          });
-          $scope.data[0].checkbox = true;
-          $scope.order.currentCheck = $scope.data[0];
-        })
-    }();
-
     $scope.initCheckbox = function(d) {
       AV._.each($scope.data, function(item) {
         item.checkbox = false;
@@ -68,17 +93,18 @@ angular.module('app.address', [])
           date: date
           , time: time
           , address: address
+          , user: AV.User.current()
         })
         .then(function(res) {
           alertPopup('提示', '下单成功');
-          $location.path('/order');
+          $location.path('/tab/order');
         }, function(err) {
           alertPopup('提示', '下单失败');
           console.error(err);
         })
     }
   })
-  .controller('AddressAddCtrl', function ($scope, $yikeUser, $location, $ionicPopup) {
+  .controller('AddressAddCtrl', function ($rootScope, $scope, $yikeUser, $location, $ionicPopup) {
     function alertPopup(title, template) {
       return $ionicPopup.alert({
         title: title,
@@ -100,6 +126,7 @@ angular.module('app.address', [])
       city: '厦门'
       , area: '思明'
     };
+    
 
     $scope.submit = function(name, phone, province, city, area, address) {
       if (!name) {
@@ -127,6 +154,8 @@ angular.module('app.address', [])
         return false;
       }
 
+
+
       D('address')
         .add({
           'name': name
@@ -135,9 +164,11 @@ angular.module('app.address', [])
           , 'city': city
           , 'area': area
           , 'address': address
+          , 'user': AV.User.current()
         })
         .then(function(res) {
           alertPopup('提示', '新增成功');
+          $scope.$emit('addAddressEvent', 'success');
           $location.path('/address');
         }, function(err) {
           alertPopup('提示', '新增失败');

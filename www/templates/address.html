@@ -24,6 +24,11 @@
 
             <div class="alert" ng-if="!data">数据载入中...</div>
 
+            <div class="alert" ng-if="data.length == 0">
+                <p>暂无地址信息，请先添加地址</p>
+                <p><button ng-click="open('/address/add')" class="button button-block button-balanced">添加地址</button></p>
+            </div>
+
             <li class="item item-checkbox" ng-repeat="d in data">
                 <label class="checkbox checkbox-balanced">
                     <input type="checkbox" ng-model="d.checkbox" ng-change="initCheckbox(d)">

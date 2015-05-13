@@ -98,7 +98,7 @@ function D(model) {
         q.equalTo(key, val);
       });
 
-      return q;
+      return this;
     },
 
     count: function(field) {
