@@ -78,7 +78,7 @@ YikeModule
         return false;
       }
 
-      if (rPassword != password) {
+      if (rPassword !== password) {
         alertPopup('提示', '两次密码输入不一致');
         return false;
       }
@@ -100,5 +100,5 @@ YikeModule
           console.error(err);
         }
       });
-    }
-  }])
+    };
+  }]);
