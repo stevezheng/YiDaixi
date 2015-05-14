@@ -3,7 +3,7 @@
 
   angular
     .module('user.common', ['user.factory'])
-    .controller('$yikeUserCommon', $yikeUserCommon);
+    .controller('$yikeUserCommonCtrl', $yikeUserCommon);
 
   $yikeUserCommon.$inject = ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser'];
 

@@ -3,7 +3,7 @@
 
   angular
     .module('user.reg', ['user.factory'])
-    .controller('$yikeUserReg', $yikeUserReg);
+    .controller('$yikeUserRegCtrl', $yikeUserReg);
 
   $yikeUserReg.$inject = ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser'];
 

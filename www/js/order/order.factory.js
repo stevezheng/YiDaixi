@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('order.factory')
+    .module('order.factory', [])
     .factory('order', order);
 
-  order.$inject = [''];
+  order.$inject = [];
 
   /* @ngInject */
   function order() {

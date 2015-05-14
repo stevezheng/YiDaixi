@@ -32,7 +32,6 @@
     $scope.initCheckbox = initCheckbox;
     $scope.open = yiOpen;
     $scope.submit = submit;
-    $scope.data = [];
 
     init();
 

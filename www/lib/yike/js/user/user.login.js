@@ -3,7 +3,7 @@
 
   angular
     .module('user.login', ['user.factory'])
-    .controller('$yikeUserLogin', $yikeUserLogin);
+    .controller('$yikeUserLoginCtrl', $yikeUserLogin);
 
   $yikeUserLogin.$inject = ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser'];
 

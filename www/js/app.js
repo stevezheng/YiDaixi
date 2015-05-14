@@ -78,7 +78,7 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         views: {
           'tab-order': {
             templateUrl: 'templates/tab-order.html',
-            controller: 'OrderCtrl'
+            controller: 'OrderListCtrl'
           }
         }
       })
@@ -97,7 +97,7 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         views: {
           'tab-user': {
             templateUrl: 'templates/tab-user.html',
-            controller: '$yikeUserCtrl'
+            controller: '$yikeUserCommonCtrl'
           }
         }
       })
