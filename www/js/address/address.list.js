@@ -32,6 +32,7 @@
     $scope.initCheckbox = initCheckbox;
     $scope.open = yiOpen;
     $scope.submit = submit;
+    $scope.data = [];
 
     init();
 
@@ -59,22 +60,33 @@
         });
     }
 
+    /**
+     * alert
+     * @param title
+     * @param template
+     * @returns {Object|*}
+     */
+    function alertPopup(title, template) {
+      return $ionicPopup.alert({
+        title: title,
+        template: template,
+        okType: 'button-balanced'
+      });
+    }
+
     function yiOpen(target) {
       $location.path(target);
     }
 
     function submit(date, time, address) {
-      if (time == '请选择服务时间') {
+      if (time === '请选择服务时间') {
         alertPopup('提示', '请选择服务时间');
         return false;
       }
 
       D('order')
         .add({
-          date: date
-          , time: time
-          , address: address
-          , user: AV.User.current()
+          date: date , time: time , address: address , user: AV.User.current()
         })
         .then(function (res) {
           alertPopup('提示', '下单成功');
@@ -82,7 +94,7 @@
         }, function (err) {
           alertPopup('提示', '下单失败');
           console.error(err);
-        })
+        });
     }
 
     function initCheckbox(d) {
