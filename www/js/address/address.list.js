@@ -56,6 +56,8 @@
           } catch (ex) {
             //console.error(ex);
           }
+
+          $scope.$digest();
         });
     }
 
@@ -85,7 +87,7 @@
 
       D('order')
         .add({
-          date: date , time: time , address: address , user: AV.User.current()
+          date: date , time: time , address: address , user: AV.User.current(), status: 0
         })
         .then(function (res) {
           alertPopup('提示', '下单成功');
