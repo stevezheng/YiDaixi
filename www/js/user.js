@@ -5,5 +5,7 @@ angular.module('app.user', [])
     $scope.logout = function() {
       $yikeUser.logOut();
       $location.path('user-login');
-    }
-  })
+    };
+
+    $scope.cUser = AV.User.current();
+  });
