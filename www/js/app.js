@@ -36,9 +36,9 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
     $stateProvider
       // setup an abstract state for the tabs directive
       .state('tab', {
-        url: "/tab",
+        url: '/tab',
         abstract: true,
-        templateUrl: "templates/tabs.html"
+        templateUrl: 'templates/tabs.html'
       })
 
       // Each tab has its own nav history stack:
@@ -105,7 +105,7 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
       .state('address', {
         url: '/address',
         templateUrl: 'templates/address.html',
-        controller: 'AddressCtrl'
+        controller: 'AddressListCtrl'
       })
 
       .state('address-add', {
@@ -116,15 +116,15 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
 
       .state('user-login', {
         url: '/user-login',
-            templateUrl: 'templates/user-login.html',
-            controller: '$yikeUserLoginCtrl'
+        templateUrl: 'templates/user-login.html',
+        controller: '$yikeUserLoginCtrl'
       })
 
       .state('user-reg', {
         url: '/user-reg',
-            templateUrl: 'templates/user-reg.html',
-            controller: '$yikeUserRegCtrl'
-      })
+        templateUrl: 'templates/user-reg.html',
+        controller: '$yikeUserRegCtrl'
+      });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/home');
