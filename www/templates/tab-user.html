@@ -9,8 +9,8 @@
                 <!--<img src="img/ionic.png" alt="" width="100%"/>-->
             </div>
             <div class="col col-60">
-                <p>13812341234</p>
-                <h4>会员卡号 00000001</h4>
+                <p>{{cUser.get('username')}}</p>
+                <h5>会员卡号 {{cUser.id}}</h5>
             </div>
             <div class="col col-10"></div>
         </div>
@@ -21,7 +21,7 @@
                   余额:
               </span>
               <span class="">
-                  120.00
+                  {{cUser.get('money') || 0}} 元
               </span>
                 <span class="pull-right white-color">|</span>
             </div>
@@ -30,7 +30,7 @@
                   优惠券:
               </span>
               <span class="">
-                  1 张
+                  0 张
               </span>
             </div>
             <div class="col col-10"></div>
