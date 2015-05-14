@@ -9,17 +9,29 @@
 
   /* @ngInject */
   function OrderListCtrl($scope, order, $location, $ionicPopup) {
-    /* jshint validthis: true */
-    var self = this;
-
-    self.init = init;
-    self.title = 'orderListCtrl';
+    $scope.active = 'doing';
 
     init();
 
     ////////////////
 
     function init() {
+      queryDoing();
+      queryDone();
+    }
+
+    function queryDoing() {
+      order.query({status: ['!=', 3]}, 1, 20)
+        .then(function(res) {
+          $scope.doing = res;
+        });
+    }
+
+    function queryDone() {
+      order.query({status: 3}, 1, 20)
+        .then(function(res) {
+          $scope.done = res;
+        });
     }
   }
 })();

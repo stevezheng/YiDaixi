@@ -16,6 +16,9 @@
     ////////////////
 
     function query(where, page, num) {
+      return D('order')
+        .where(where)
+        .select();
     }
   }
 })();
