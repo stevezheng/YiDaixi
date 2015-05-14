@@ -12,7 +12,7 @@
     return {
       login: login,
       reg: reg,
-      permission: permission,
+      permission: permission
     };
 
     ////////////////
