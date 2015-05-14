@@ -95,7 +95,13 @@ function D(model) {
 
     where: function (where) {
       AV._.mapObject(where, function (val, key) {
-        q.equalTo(key, val);
+        if (typeof val === 'string' || typeof val === 'number') {
+          q.equalTo(key, val);
+        } else {
+          if (val[0] === '!=') {
+            q.notEqualTo(key, val[1]);
+          }
+        }
       });
 
       return this;
