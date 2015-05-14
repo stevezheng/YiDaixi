@@ -9,7 +9,7 @@
   "immed": true,
   "indent": 4,
   "latedef": "nofunc",
-  "newcap": true,
+  "newcap": false,
   "noarg": true,
   "noempty": true,
   "nonbsp": true,
@@ -61,6 +61,7 @@
     "cordova": false,
     "moment": false,
     "StatusBar": false,
+    "YikeModule": false,
     "D": false
   }
 }

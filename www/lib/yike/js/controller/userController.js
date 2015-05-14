@@ -2,7 +2,8 @@ YikeModule
   .controller('$yikeUserCtrl', ['$scope', '$yikeUser', function ($scope, $yikeUser) {
     $yikeUser.permission();
   }])
-  .controller('$yikeUserLoginCtrl', ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser', function ($rootScope, $scope, $ionicPopup, $timeout, $location, $yikeUser) {
+  .controller('$yikeUserLoginCtrl', ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser',
+    function ($rootScope, $scope, $ionicPopup, $timeout, $location, $yikeUser) {
     /**
      * alert
      * @param title
@@ -42,10 +43,11 @@ YikeModule
           console.error(err);
         }
       });
-    }
+    };
   }])
 
-  .controller('$yikeUserRegCtrl', ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser', function ($rootScope, $scope, $ionicPopup, $timeout, $location, $yikeUser) {
+  .controller('$yikeUserRegCtrl', ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser',
+    function ($rootScope, $scope, $ionicPopup, $timeout, $location, $yikeUser) {
     /**
      * alert
      * @param title
@@ -78,7 +80,7 @@ YikeModule
         return false;
       }
 
-      if (rPassword != password) {
+      if (rPassword !== password) {
         alertPopup('提示', '两次密码输入不一致');
         return false;
       }
@@ -100,5 +102,5 @@ YikeModule
           console.error(err);
         }
       });
-    }
-  }])
+    };
+  }]);
