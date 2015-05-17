@@ -24,6 +24,7 @@
       order.query({status: ['!=', 3]}, 1, 20)
         .then(function(res) {
           $scope.doing = res;
+          $scope.$digest();
         });
     }
 
@@ -31,6 +32,7 @@
       order.query({status: 3}, 1, 20)
         .then(function(res) {
           $scope.done = res;
+          $scope.$digest();
         });
     }
   }
