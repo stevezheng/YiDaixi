@@ -94,7 +94,7 @@
           , status: 0
         }, (new AV.ACL(AV.User.current())))
         .then(function () {
-          alertPopup('提示', '下单成功');
+          alertPopup('下单成功', '<p>服务时间:'+date+'</p><p>服务时段:'+time+'</p>');
           $location.path('/tab/order');
         }, function (err) {
           alertPopup('提示', '下单失败');

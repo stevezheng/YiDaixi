@@ -26,7 +26,7 @@
                   <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: {{item.createdAt | date: 'yyyy-MM-dd HH:mm'}}</p>
               </a>
               <div class="button-bar">
-                  <a class="button button-balanced">取消订单</a>
+                  <a class="button button-balanced" ng-click="cancel(item)">取消订单</a>
                   <a class="button button-balanced">暂无法支付</a>
               </div>
           </div>
@@ -42,7 +42,7 @@
                   <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: {{item.createdAt | date: 'yyyy-MM-dd HH:mm'}}</p>
               </a>
               <div class="button-bar">
-                  <a class="button button-balanced">取消订单</a>
+                  <a class="button button-balanced" ng-click="cancel(item)">取消订单</a>
                   <a class="button button-balanced">暂无法支付</a>
               </div>
           </div>
