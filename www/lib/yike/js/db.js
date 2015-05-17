@@ -127,10 +127,14 @@ function D(model) {
 
     },
 
-    add: function (data) {
+    add: function (data, ACL) {
       AV._.mapObject(data, function (val, key) {
         instance.set(key, val);
       });
+
+      if (ACL) {
+        instance.setACL(ACL);
+      }
 
       return instance.save();
     },

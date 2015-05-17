@@ -5,10 +5,10 @@
     .module('address.list', [])
     .controller('AddressListCtrl', AddressListCtrl)
 
-    .$inject = ['$rootScope', '$scope', '$yikeUser', '$location', '$ionicPopup'];
+    .$inject = ['$rootScope', '$scope', '$yikeUser', 'order','$location', '$ionicPopup'];
 
   /* @ngInject */
-  function AddressListCtrl($rootScope, $scope, $yikeUser, $location, $ionicPopup) {
+  function AddressListCtrl($rootScope, $scope, $yikeUser, order, $location, $ionicPopup) {
     /* jshint validthis: true */
     var self = this;
 
@@ -87,9 +87,13 @@
 
       D('order')
         .add({
-          date: date , time: time , address: address , user: AV.User.current(), status: 0
-        })
-        .then(function (res) {
+          date: date
+          , time: time
+          , address: address
+          , user: AV.User.current()
+          , status: 0
+        }, (new AV.ACL(AV.User.current())))
+        .then(function () {
           alertPopup('提示', '下单成功');
           $location.path('/tab/order');
         }, function (err) {
