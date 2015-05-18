@@ -70,7 +70,10 @@ function D(model) {
     },
 
     page: function (page, listRows) {
+      q.skip((page - 1) * listRows);
+      q.limit(listRows);
 
+      return this;
     },
 
     union: function (union, all) {
@@ -116,7 +119,7 @@ function D(model) {
     },
 
     count: function (field) {
-
+      return q.count();
     },
 
     sum: function (field) {
@@ -183,8 +186,20 @@ function D(model) {
 
     },
 
+    //todo: 暂未实现
     countSelect: function (options, flag) {
-
+      var result = {};
+      return q.find()
+        .then(function(res) {
+          result.results = res;
+        })
+        .then(function() {
+          return q.count();
+        })
+        .then(function (count) {
+          result.count = count.count;
+          return result;
+        });
     },
 
     buildSql: function (options) {
