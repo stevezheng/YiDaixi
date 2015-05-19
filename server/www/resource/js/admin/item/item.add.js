@@ -12,7 +12,9 @@
     $scope.init = init;
     $scope.submit = submit;
     $scope.item = {
-      avatar: ''
+      name: ''
+      , price: 0
+      , image: ''
     };
 
     init();
@@ -33,7 +35,7 @@
         return false;
       }
 
-      if (!$scope.item.avatar) {
+      if (!$scope.item.image) {
         window.alert('请上传产品图片');
         return false;
       }

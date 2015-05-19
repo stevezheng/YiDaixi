@@ -21,6 +21,7 @@
                         <th>ID</th>
                         <th>产品名称</th>
                         <th>产品价格</th>
+                        <th>产品图片</th>
                         <th>创建时间</th>
                         <th>操作</th>
                     </tr>
@@ -29,6 +30,7 @@
                         <td>{{d.id}}</td>
                         <td>{{d.get('name')}}</td>
                         <td>{{d.get('price')}}</td>
+                        <td><a href="{{d.get('image')}}" target="_blank"><img ng-src="{{d.get('image')}}" style="width: 50px;" alt=""/></a></td>
                         <td>{{d.createdAt | date: 'yyyy-mm-dd'}}</td>
                         <td><button class="btn btn-danger btn-xs" ng-click="del(d)">删除</button></td>
                     </tr>

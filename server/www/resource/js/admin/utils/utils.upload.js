@@ -8,11 +8,9 @@
   utilsUpload.$inject = [];
   function utilsUpload() {
     return {
-      //scope: {},
       replace: true,
       restrict: 'AE',
       link: function (scope, elem, attrs) {
-        //scope.avatar = '';
 
         scope.browseFile = function () {
           document.getElementById('browseBtn').click();
@@ -29,7 +27,7 @@
           avFile.save()
             .then(function(res) {
               scope.$apply(function() {
-                scope.item.avatar = res._url;
+                scope.item.image = res._url;
               });
             }, function(error) {
             });
