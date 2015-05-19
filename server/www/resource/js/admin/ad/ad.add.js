@@ -13,7 +13,6 @@
     $scope.submit = submit;
     $scope.item = {
       name: ''
-      , price: 0
       , image: ''
     };
 
