@@ -11,7 +11,10 @@
                             ID: <input type="text" ng-model="filter.id" style="width: 50px;"/> &nbsp;
                             账号: <input type="text" ng-model="filter.username" style="width: 100px;"/> &nbsp;
                             等级: <select name="" ng-model="filter.status">
-                            <option value="">全部</option><option value="1">游客</option><option value="2">会员</option></select> &nbsp;
+                            <option value="">全部</option>
+                            <option value="1">游客</option>
+                            <option value="2">会员</option>
+                        </select> &nbsp;
                             电话: <input type="text" ng-model="filter.phone" style="width: 100px;"/> &nbsp;
                             QQ: <input type="text" ng-model="filter.qq" style="width: 100px;"/> &nbsp;
                             <button class="btn btn-success btn-xs" ng-click="search()">查询</button>
@@ -37,7 +40,7 @@
                         <li ng-if="page != total"><a ng-click="changePage(page+1)" href="javascript:;;;">»</a></li>
                     </ul>
                 </div>
-            </header>
-        </div>
+            </div>
+        </section>
     </div>
 </div>

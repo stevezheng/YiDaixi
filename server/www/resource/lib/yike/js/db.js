@@ -159,7 +159,7 @@ function D(model) {
     },
 
     delete: function () {
-
+      return q.destroyAll();
     },
 
     update: function (data) {
