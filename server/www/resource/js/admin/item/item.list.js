@@ -45,7 +45,7 @@
         .count()
         .then(function (count) {
           $scope.count = count;
-          $scope.totalPage = Number(count / $scope.page);
+          $scope.totalPage = Math.ceil(count / $scope.listRows);
         });
     }
 
