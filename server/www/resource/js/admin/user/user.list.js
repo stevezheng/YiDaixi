@@ -16,6 +16,9 @@
     $scope.filter = {};
 
     $scope.changePage = changePage;
+    $scope.openModal = openModal;
+    $scope.del = del;
+    $scope.query = query;
 
     init();
 
@@ -48,6 +51,22 @@
         $scope.page = page;
         query();
       }
+    }
+
+    function openModal(element) {
+      $(element).click();
+    }
+
+    function del(item) {
+      D('user')
+        .where({objectId: item.id})
+        .delete()
+        .then(function () {
+          window.alert('删除成功');
+          query();
+        }, function (err) {
+          window.alert('删除失败');
+        });
     }
   }
 })();

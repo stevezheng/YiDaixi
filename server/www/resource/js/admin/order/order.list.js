@@ -18,6 +18,7 @@
     $scope.changePage = changePage;
     $scope.openModal = openModal;
     $scope.del = del;
+    $scope.query = query;
 
     init();
 
