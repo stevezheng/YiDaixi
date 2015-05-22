@@ -36,6 +36,7 @@
       D('item')
         .page($scope.page, $scope.listRows)
         .where($scope.filter)
+        .order('createdAt desc')
         .select()
         .then(function (res) {
           $scope.data = res;
@@ -58,8 +59,6 @@
     }
 
     function del(item) {
-      console.log(item);
-      console.dir(item);
       D('item')
         .where({objectId: item.id})
         .delete()

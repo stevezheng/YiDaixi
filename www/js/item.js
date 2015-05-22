@@ -27,4 +27,4 @@ angular.module('app.item', [])
     $scope.open = function(path) {
       $location.path(path);
     };
-  })
+  });

@@ -14,7 +14,6 @@
                     按袋计价
                 </span>
             </a>
-            <div class="col"></div>
             <a class="col text-right" ng-click="open('/address')">
                 下单
             </a>
@@ -30,39 +29,28 @@
               </div>
           </div>
       </div>
-      <div class="row" ng-show="tabStatus==9">
-          <div class="col">
-              <img src="img/item/Piece_9_a.png" alt="" width="100%" ng-click="addItem(9)"/>
+      <div ng-show="tabStatus==9" ng-repeat="item in item9">
+          <div class="row">
+              <div class="col col-33" ng-repeat="i in item">
+                  <img ng-src="{{i.get('image')}}" alt="" width="100%"/>
+                  <p class="text-center">{{i.get('name')}}</p>
+              </div>
           </div>
       </div>
-      <div class="row" ng-show="tabStatus==9">
-          <div class="col">
-              <img src="img/item/Piece_9_b.png" alt="" width="100%" ng-click="addItem(9)"/>
+      <div ng-show="tabStatus==19" ng-repeat="item in item19">
+          <div class="row">
+              <div class="col col-33" ng-repeat="i in item">
+                  <img ng-src="{{i.get('image')}}" alt="" width="100%"/>
+                  <p class="text-center">{{i.get('name')}}</p>
+              </div>
           </div>
       </div>
-      <div class="row" ng-show="tabStatus==9">
-          <div class="col">
-              <img src="img/item/Piece_9_c.png" alt="" width="100%" ng-click="addItem(9)"/>
-          </div>
-      </div>
-      <div class="row" ng-show="tabStatus==19">
-          <div class="col">
-              <img src="img/item/Piece_19_a.png" alt="" width="100%" ng-click="addItem(19)"/>
-          </div>
-      </div>
-      <div class="row" ng-show="tabStatus==19">
-          <div class="col">
-              <img src="img/item/Piece_19_b.png" alt="" width="100%" ng-click="addItem(19)"/>
-          </div>
-      </div>
-      <div class="row" ng-show="tabStatus==19">
-          <div class="col">
-              <img src="img/item/Piece_19_c.png" alt="" width="100%" ng-click="addItem(19)"/>
-          </div>
-      </div>
-      <div class="row" ng-show="tabStatus==29">
-          <div class="col">
-              <img src="img/item/Piece_29_a.jpg" alt="" width="100%" ng-click="addItem(29)"/>
+      <div ng-show="tabStatus==29" ng-repeat="item in item29">
+          <div class="row">
+              <div class="col col-33" ng-repeat="i in item">
+                  <img ng-src="{{i.get('image')}}" alt="" width="100%"/>
+                  <p class="text-center">{{i.get('name')}}</p>
+              </div>
           </div>
       </div>
   </ion-content>

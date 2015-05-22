@@ -28,7 +28,9 @@
                     <tr ng-repeat="d in data">
                         <td>{{d.id}}</td>
                         <td>{{d.get('name')}}</td>
-                        <td><a href="{{d.get('image')}}" target="_blank"><img ng-src="{{d.get('image')}}" style="width: 50px;" alt=""/></a></td>
+                        <td>
+                            <a href="{{d.get('image')}}" target="_blank"><img ng-src="{{d.get('image')}}" style="width: 50px;" alt=""/></a>
+                        </td>
                         <td>{{d.createdAt | date: 'yyyy-mm-dd'}}</td>
                         <td><button class="btn btn-danger btn-xs" ng-click="del(d)">删除</button></td>
                     </tr>

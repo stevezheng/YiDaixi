@@ -58,7 +58,7 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         views: {
           'tab-home': {
             templateUrl: 'templates/item-piece.html',
-            controller: 'ItemPieceCtrl'
+            controller: 'ItemListCtrl'
           }
         }
       })
