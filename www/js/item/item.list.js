@@ -5,13 +5,14 @@
     .module('item.list', [])
     .controller('ItemListCtrl', ItemListCtrl)
 
-    .$inject = ['$scope'];
+    .$inject = ['$scope', '$location'];
 
-  function ItemListCtrl($scope) {
-    var self = this;
-
+  function ItemListCtrl($scope, $location) {
     $scope.tabStatus = 9;
     $scope.query = query;
+    $scope.back = back;
+    $scope.open = _open;
+
 
     init();
 
@@ -19,6 +20,14 @@
 
     function init() {
       query();
+    }
+
+    function back() {
+      _open('/tab/home');
+    }
+
+    function _open(path) {
+      $location.path(path);
     }
 
     function query() {
