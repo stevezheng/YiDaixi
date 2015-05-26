@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -45,7 +45,7 @@
           $scope.item29 = [];
           $scope._item29 = [];
 
-          AV._.each(res, function(item) {
+          AV._.each(res, function (item) {
             if (item.get('price') === '9') {
               if ($scope._item9.length < 3) {
                 $scope._item9.push(item);
@@ -96,15 +96,15 @@
     }
 
     function sub(item) {
-      if ($scope.money >= Number(item.get('price'))) {
-        $scope.money -= Number(item.get('price'));
-        $scope.piece--;
-
-        var index = AV._.indexOf(order.cart, item);
-
-        if (index !== -1) {
+      var index = AV._.indexOf(order.cart, item);
+      if (index !== -1) {
+        if ($scope.money >= Number(item.get('price'))) {
           if (order.cart[index].count > 0) {
+
+            $scope.money -= Number(item.get('price'));
+            $scope.piece--;
             order.cart[index].count--;
+
           }
         }
       }
