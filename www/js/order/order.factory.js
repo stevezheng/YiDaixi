@@ -9,8 +9,11 @@
 
   /* @ngInject */
   function order() {
+    var cart = [];
+
     return {
       query: query
+      , cart: cart
     };
 
     ////////////////

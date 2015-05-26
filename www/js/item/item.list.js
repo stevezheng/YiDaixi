@@ -2,16 +2,20 @@
   'use strict';
 
   angular
-    .module('item.list', [])
+    .module('item.list', ['order.factory'])
     .controller('ItemListCtrl', ItemListCtrl)
 
-    .$inject = ['$scope', '$location'];
+    .$inject = ['$scope', '$location', 'order'];
 
-  function ItemListCtrl($scope, $location) {
+  function ItemListCtrl($scope, $location, order) {
     $scope.tabStatus = 9;
     $scope.query = query;
     $scope.back = back;
     $scope.open = _open;
+    $scope.add = add;
+    $scope.sub = sub;
+    $scope.money = 0;
+    $scope.piece = 0;
 
 
     init();
@@ -75,6 +79,35 @@
 
           $scope.$digest();
         });
+    }
+
+    function add(item) {
+      $scope.money += Number(item.get('price'));
+      $scope.piece++;
+
+      var index = AV._.indexOf(order.cart, item);
+
+      if (index !== -1) {
+        order.cart[index].count++;
+      } else {
+        item.count = 1;
+        order.cart.push(item);
+      }
+    }
+
+    function sub(item) {
+      if ($scope.money >= Number(item.get('price'))) {
+        $scope.money -= Number(item.get('price'));
+        $scope.piece--;
+
+        var index = AV._.indexOf(order.cart, item);
+
+        if (index !== -1) {
+          if (order.cart[index].count > 0) {
+            order.cart[index].count--;
+          }
+        }
+      }
     }
   }
 })();

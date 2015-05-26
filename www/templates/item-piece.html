@@ -19,7 +19,7 @@
             </a>
         </div>
     </ion-header-bar>
-  <ion-content>
+  <ion-content style="bottom: 98px;">
       <div class="row balanced-light-bg">
           <div class="col">
               <div class="button-bar">
@@ -33,7 +33,14 @@
           <div class="row">
               <div class="col col-33" ng-repeat="i in item">
                   <img ng-src="{{i.get('image')}}" alt="" width="100%"/>
-                  <p class="text-center">{{i.get('name')}}</p>
+                  <p class="text-center" style="margin: 0">{{i.get('name')}}</p>
+                  <div class="row">
+                      <i class="col col-20 icon ion-minus-circled balanced" ng-click="sub(i)"></i>
+                      <div class="col col-60 text-center balanced">
+                          {{i.count || 0}}
+                      </div>
+                      <i class="col col-20 icon ion-plus-circled balanced" ng-click="add(i)"></i>
+                  </div>
               </div>
           </div>
       </div>
@@ -42,6 +49,13 @@
               <div class="col col-33" ng-repeat="i in item">
                   <img ng-src="{{i.get('image')}}" alt="" width="100%"/>
                   <p class="text-center">{{i.get('name')}}</p>
+                  <div class="row">
+                      <i class="col col-20 icon ion-minus-circled balanced" ng-click="sub(i)"></i>
+                      <div class="col col-60 text-center balanced">
+                          {{i.count || 0}}
+                      </div>
+                      <i class="col col-20 icon ion-plus-circled balanced" ng-click="add(i)"></i>
+                  </div>
               </div>
           </div>
       </div>
@@ -50,6 +64,13 @@
               <div class="col col-33" ng-repeat="i in item">
                   <img ng-src="{{i.get('image')}}" alt="" width="100%"/>
                   <p class="text-center">{{i.get('name')}}</p>
+                  <div class="row">
+                      <i class="col col-20 icon ion-minus-circled balanced" ng-click="sub(i)"></i>
+                      <div class="col col-60 text-center balanced">
+                          {{i.count || 0}}
+                      </div>
+                      <i class="col col-20 icon ion-plus-circled balanced" ng-click="add(i)"></i>
+                  </div>
               </div>
           </div>
       </div>
