@@ -102,6 +102,21 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         }
       })
 
+      .state('order-cart', {
+        url: '/order-cart',
+        templateUrl: 'templates/order-cart.html',
+        controller: 'OrderCartCtrl'
+      })
+      //.state('tab.order-cart', {
+      //  url: '/order-cart',
+      //  views: {
+      //    'tab-order': {
+      //      templateUrl: 'templates/order-cart.html',
+      //      controller: 'OrderCartCtrl'
+      //    }
+      //  }
+      //})
+
       .state('address', {
         url: '/address',
         templateUrl: 'templates/address.html',

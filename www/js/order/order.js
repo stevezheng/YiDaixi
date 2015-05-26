@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('app.order', ['order.factory', 'order.list']);
+    .module('app.order', ['order.factory', 'order.list', 'order.cart']);
 })();

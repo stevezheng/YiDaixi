@@ -14,6 +14,7 @@
     $scope.open = _open;
     $scope.add = add;
     $scope.sub = sub;
+    $scope.orderCart = orderCart;
     $scope.money = 0;
     $scope.piece = 0;
 
@@ -32,6 +33,10 @@
 
     function _open(path) {
       $location.path(path);
+    }
+
+    function orderCart() {
+      _open('/order-cart');
     }
 
     function query() {
@@ -104,7 +109,6 @@
             $scope.money -= Number(item.get('price'));
             $scope.piece--;
             order.cart[index].count--;
-
           }
         }
       }

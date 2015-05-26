@@ -1,0 +1,26 @@
+<ion-header-bar class="bar-balanced bar bar-header">
+    <button class="button button-clear" style="font-size: 12px;" ng-click="open('/tab/item/piece')">返回</button>
+    <h1 class="title">订单清单</h1>
+</ion-header-bar>
+<ion-view>
+    <ion-content>
+        <div class="list">
+
+            <a class="item item-avatar" href="#" ng-repeat="c in cart">
+                <img ng-src="{{c.get('image')}}">
+                <h2>{{c.get('name')}}</h2>
+                <p class="balanced">{{c.count || 0}}件 * {{c.get('price')}}元 = {{c.count * 1 * c.get('price')}}元</p>
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>
+<div class="bar bar-footer bar-balanced">
+    <h1 class="title" ng-click="open('/address')">确认下单</h1>
+    <!--<div class="row">-->
+        <!--<div class="col">总价:{{money}}元({{piece}}件)</div>-->
+        <!--<a class="col text-right" ng-click="orderCart()">-->
+            <!--下单-->
+        <!--</a>-->
+    <!--</div>-->
+</div>
