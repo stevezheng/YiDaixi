@@ -30,7 +30,7 @@
       '18:00-20:00',
       '20:00-22:00'];
     $scope.initCheckbox = initCheckbox;
-    $scope.open = yiOpen;
+    $scope.open = _open;
     $scope.submit = submit;
 
     init();
@@ -75,7 +75,7 @@
       });
     }
 
-    function yiOpen(target) {
+    function _open(target) {
       $location.path(target);
     }
 
@@ -85,12 +85,27 @@
         return false;
       }
 
+      var cart = [];
+
+      for (var i = 0; i < order.cart.length; i++) {
+        var obj = order.cart[i];
+        var o = {
+          'name': obj.get('name')
+          , 'price': obj.get('price')
+          , 'image': obj.get('image')
+          , 'count': obj.count
+        };
+
+        cart.push(o);
+      }
+
       D('order')
         .add({
           date: date
           , time: time
           , address: address
           , user: AV.User.current()
+          , item: cart
           , status: 0
         }, (new AV.ACL(AV.User.current())))
         .then(function () {
