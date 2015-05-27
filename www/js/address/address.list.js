@@ -85,7 +85,8 @@
         return false;
       }
 
-      var cart = [];
+      var cart = []
+        , cost = 0;
 
       for (var i = 0; i < order.cart.length; i++) {
         var obj = order.cart[i];
@@ -95,6 +96,8 @@
           , 'image': obj.get('image')
           , 'count': obj.count
         };
+
+        cost += Number(o.price) * Number(o.count);
 
         cart.push(o);
       }
@@ -106,6 +109,7 @@
           , address: address
           , user: AV.User.current()
           , item: cart
+          , cost: cost
           , status: 0
         }, (new AV.ACL(AV.User.current())))
         .then(function () {
