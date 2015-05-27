@@ -3,7 +3,7 @@ angular.module('app.user', [])
     $yikeUser.permission();
 
     $scope.logout = function() {
-      $yikeUser.logOut();
+      AV.User.logOut();
       $location.path('user-login');
     };
 

@@ -17,34 +17,36 @@
     </ion-header-bar>
   <ion-content>
       <p ng-if="active=='doing' && !doing" class="text-center">订单载入中...</p>
+      <p ng-if="active=='doing' && doing.length == 0" class="balanced text-center">暂无服务中订单</p>
       <div ng-show="active=='doing'">
           <div class="list order-list" ng-repeat="item in doing">
               <a class="item item-avatar" href="#">
                   <img src="img/order/progress-1.png" width="100%">
                   <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: {{item.id}}</p>
-                  <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">0元</span></p>
+                  <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">{{item.get('cost')}}元</span></p>
                   <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: {{item.createdAt | date: 'yyyy-MM-dd HH:mm'}}</p>
               </a>
               <div class="button-bar">
                   <a class="button button-balanced" ng-click="cancel(item)">取消订单</a>
-                  <a class="button button-balanced">暂无法支付</a>
+                  <a class="button button-balanced" ng-if="item.get('status') === 0">待支付</a>
               </div>
           </div>
       </div>
 
       <p ng-if="active=='done' && !done" class="text-center">订单载入中...</p>
+      <p ng-if="active=='done' && done.length == 0" class="balanced text-center">暂无已完成订单</p>
       <div ng-show="active=='done'">
           <div class="list order-list" ng-repeat="item in done">
               <a class="item item-avatar" href="#">
                   <img src="img/order/progress-1.png" width="100%">
                   <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: {{item.id}}</p>
-                  <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">0元</span></p>
+                  <p><i class="icon ion-ios-alarm-outline balanced"></i> 订单总额: <span class="energized">{{item.get('cost')}}元</span></p>
                   <p><i class="icon ion-ios-time-outline balanced"></i> 服务时间: {{item.createdAt | date: 'yyyy-MM-dd HH:mm'}}</p>
               </a>
-              <div class="button-bar">
-                  <a class="button button-balanced" ng-click="cancel(item)">取消订单</a>
-                  <a class="button button-balanced">暂无法支付</a>
-              </div>
+              <!--<div class="button-bar">-->
+                  <!--<a class="button button-balanced" ng-click="cancel(item)">取消订单</a>-->
+                  <!--<a class="button button-balanced">暂无法支付</a>-->
+              <!--</div>-->
           </div>
       </div>
   </ion-content>

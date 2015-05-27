@@ -51,7 +51,7 @@
         return false;
       }
 
-      $yikeUser.logIn(username, password, {
+      AV.User.logIn(username, password, {
         success: function (user) {
           var popup = alertPopup('提示', '登录成功');
           popup.then(function () {
