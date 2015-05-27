@@ -75,3 +75,9 @@
 span.error {
     color: red;
 }
+
+.pay-money .col{
+    background: #30c1ae;
+    color: #f0f0f0;
+    margin: 5px;
+}

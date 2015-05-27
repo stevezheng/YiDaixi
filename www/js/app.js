@@ -6,7 +6,7 @@ AV.initialize('9rtdr38i5zj64xo020m8x4m0g3f1e6evjkjbospon7lrs0ea', 'wsu2o1gnk2v5f
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', 'app.user', 'app.address'])
+angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', 'app.user', 'app.address', 'pay'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -145,6 +145,12 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         url: '/user-verify',
         templateUrl: 'templates/user-verify.html',
         controller: '$yikeUserVerifyCtrl'
+      })
+
+      .state('pay', {
+        url: '/pay',
+        templateUrl: 'templates/pay.html',
+        controller: 'PayShowCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback

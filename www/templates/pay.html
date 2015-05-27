@@ -1,0 +1,48 @@
+<ion-header-bar class="bar-balanced bar bar-header">
+    <h1 class="title">注册</h1>
+</ion-header-bar>
+<ion-view>
+    <ion-content>
+            <img src="img/pay.jpg" alt="" height="150" width="100%"/>
+        <div class="list">
+            <div class="item">
+                <div class="row">
+                    <div class="col col-20">余额</div>
+                    <div class="col col-80">{{user.get('money') || 0}}元</div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item">
+                <div class="row">
+                    <div class="col">充值卡充值</div>
+                </div>
+                <div class="row">
+                    <div class="col col-60"><input type="text" ng-model="card" placeholder="请输入充值卡密码"/></div>
+                    <div class="col col-40"><button class="button button-balanced button-small" ng-click="payCard(card)">确定</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item">
+                <div class="row">
+                    <div class="col">在线充值</div>
+                </div>
+                <div class="row pay-money">
+                    <div class="col" ng-click="money = 2000">充2000返600</div>
+                    <div class="col" ng-click="money = 1000">充1000返260</div>
+                    <div class="col" ng-click="money = 500">充500返100</div>
+                </div>
+                <div class="row" style="margin: 5px">
+                    <label class="item item-input">
+                        <span class="input-label">充值金额</span>
+                        <input type="text" ng-model="money">
+                    </label>
+                </div>
+                <div class="row">
+                    <button class="button button-balanced button-block" ng-click="pay()">确认支付</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
