@@ -66,7 +66,10 @@ function D(model) {
     },
 
     limit: function (offset, length) {
+      q.skip(offset);
+      q.limit(length);
 
+      return this;
     },
 
     page: function (page, listRows) {
