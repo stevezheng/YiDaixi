@@ -42,7 +42,7 @@ YikeModule
           console.error(err);
         }
       });
-    }
+    };
   }])
 
   .controller('$yikeUserRegCtrl', ['$rootScope', '$scope', '$ionicPopup', '$timeout', '$location', '$yikeUser', function ($rootScope, $scope, $ionicPopup, $timeout, $location, $yikeUser) {

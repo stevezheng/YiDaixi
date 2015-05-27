@@ -16,6 +16,11 @@
     self.title = '$yikeUserReg';
 
     $scope.user = {};
+    //$scope.isSendVerify = false;
+    $scope.isReg = false;
+    $scope.code = '';
+    $scope.verify = verify;
+    $scope.isSendCode = false;
 
     $scope.reg = reg;
 
@@ -40,9 +45,24 @@
       });
     }
 
+    function verify(code) {
+      AV.User.verifyMobilePhone(code).then(function(){
+        alertPopup('提示', '验证手机号码成功,完成注册');
+        $location.path('/tab/home');
+      }, function(err){
+        //验证失败
+        alertPopup('提示', '验证手机号码失败,注册失败');
+      });
+    }
+
     function reg(username, password, rPassword) {
       if (!username) {
-        alertPopup('提示', '请输入用户名');
+        alertPopup('提示', '请输入手机号码');
+        return false;
+      }
+
+      if (username.length !== 11) {
+        alertPopup('提示', '手机格式不正确');
         return false;
       }
 
@@ -61,21 +81,26 @@
         return false;
       }
 
-      var user = new $yikeUser();
+      var user = new AV.User();
 
       user.set('username', username);
       user.set('password', password);
+      user.setMobilePhoneNumber(username);
 
       user.signUp(null, {
         success: function (user) {
-          var popup = alertPopup('提示', '注册成功');
+          var popup = alertPopup('提示', '注册成功,请验证手机号码');
           popup.then(function () {
-            $location.path('/tab/home');
+            $location.path('/user-verify');
           });
-          $rootScope.cUser = user;
         },
         error: function (user, err) {
           console.error(err);
+          if (err.code === 214) {
+            alertPopup('提示', '该用户已注册,请直接登陆');
+          } else {
+            alertPopup('提示', '注册失败');
+          }
         }
       });
     }

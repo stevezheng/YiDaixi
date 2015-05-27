@@ -5,6 +5,7 @@
     'user.factory',
     'user.common',
     'user.login',
+    'user.verify',
     'user.reg'
   ]);
 

@@ -139,6 +139,12 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         url: '/user-reg',
         templateUrl: 'templates/user-reg.html',
         controller: '$yikeUserRegCtrl'
+      })
+
+      .state('user-verify', {
+        url: '/user-verify',
+        templateUrl: 'templates/user-verify.html',
+        controller: '$yikeUserVerifyCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback

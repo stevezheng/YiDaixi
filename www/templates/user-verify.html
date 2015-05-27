@@ -1,0 +1,17 @@
+<ion-header-bar class="bar-balanced bar bar-header">
+    <h1 class="title">注册</h1>
+</ion-header-bar>
+<ion-view>
+    <ion-content class="padding">
+        <div class="list">
+        <label class="item item-input">
+            <input type="text" placeholder="6位数字验证码" ng-model="code">
+            <button class="button button-balanced" ng-show="isSendCode" ng-click="sendCode()">重新发送验证码</button>
+            <button class="button button-stable" ng-show="!isSendCode">重新发送验证码</button>
+        </label>
+            <button class="button button-balanced button-block" ng-click="verify(code)">
+                验证短信
+            </button>
+            </div>
+    </ion-content>
+</ion-view>

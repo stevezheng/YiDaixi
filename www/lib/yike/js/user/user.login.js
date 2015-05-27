@@ -53,14 +53,24 @@
 
       AV.User.logIn(username, password, {
         success: function (user) {
-          var popup = alertPopup('提示', '登录成功');
-          popup.then(function () {
-            $location.path('/tab/home');
-          });
-          $rootScope.cUser = user;
+          if (user.get('mobilePhoneVerified')) {
+            var popup = alertPopup('提示', '登录成功');
+            popup.then(function () {
+              $location.path('/tab/home');
+            });
+            $rootScope.cUser = user;
+          } else {
+            var popup1 = alertPopup('提示', '请验证手机号码');
+            popup1.then(function () {
+              $location.path('/user-verify');
+            });
+          }
         },
         error: function (user, err) {
           console.error(err);
+          if (err.code === 211) {
+            alertPopup('提示', '该手机号未注册');
+          }
         }
       });
     }
