@@ -129,6 +129,12 @@ angular.module('app', ['ionic', 'yike', 'app.common', 'app.item', 'app.order', '
         controller: 'AddressAddCtrl'
       })
 
+      .state('address-edit-list', {
+        url: '/address/edit/list',
+        templateUrl: 'templates/address-edit-list.html',
+        controller: 'AddressListCtrl'
+      })
+
       .state('user-login', {
         url: '/user-login',
         templateUrl: 'templates/user-login.html',

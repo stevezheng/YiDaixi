@@ -1,0 +1,74 @@
+<ion-header-bar class="bar-balanced bar bar-header">
+    <button class="button button-clear" style="font-size: 12px;" ng-click="open('tab.user')">返回</button>
+    <h1 class="title">常用地址</h1>
+    <button class="button button-clear" style="font-size: 12px;" ng-click="edit()">编辑</button>
+</ion-header-bar>
+<ion-view>
+    <ion-content class="padding">
+        <ul class="list">
+
+            <div class="alert" ng-if="!data">数据载入中...</div>
+
+            <div class="alert" ng-if="data.length == 0">
+                <p>暂无地址信息，请先添加地址</p>
+            </div>
+
+            <li class="item item-checkbox" ng-repeat="d in data">
+                <label class="checkbox checkbox-balanced">
+                    <input type="checkbox" ng-model="d.checkbox" ng-change="initCheckbox(d)">
+                </label>
+                <p>{{d.get('name')}} {{d.get('phone')}}</p>
+                <p>
+                    {{d.get('province')}} {{d.get('city')}} {{d.get('area')}} {{d.get('address')}}
+                </p>
+                <!--<p class="text-right"><span>编辑</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="error">删除</span></p>-->
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>
+<script id="edit-address-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar-balanced">
+            <h1 class="title">编辑地址</h1>
+            <button class="button button-clear" style="font-size: 12px;" ng-click="closeModal()">关闭</button>
+        </ion-header-bar>
+        <ion-content>
+            <div class="row">
+                <div class="col">姓名</div>
+                <div class="col"><input type="text" ng-model="editData.name" placeholder="请填写姓名" style="border: 1px solid #e4e5e7; padding: 5px;"/></div>
+            </div>
+
+            <div class="row">
+                <div class="col">手机号码</div>
+                <div class="col"><input type="text" ng-model="editData.phone" placeholder="请填写手机号码" style="border: 1px solid #e4e5e7; padding: 5px;"/></div>
+            </div>
+
+            <div class="row">
+                <div class="col">选择城市</div>
+                <div class="col">
+                    <select ng-options="city for city in cities" ng-model="editData.city"></select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">选择区域</div>
+                <div class="col">
+                    <select ng-options="area for area in areas" ng-model="editData.area"></select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">详细地址</div>
+                <div class="col">
+                    <textarea name="" ng-model="editData.address" id="" cols="19" rows="5" style="border: 1px solid #e4e5e7; padding: 5px;" placeholder="请填写详细地址"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="button button-balanced button-block" ng-click="update(editData.name, editData.phone, '福建', editData.city, editData.area, editData.address)">保存</button>
+                </div>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>
