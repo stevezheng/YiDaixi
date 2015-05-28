@@ -51,6 +51,7 @@
               .where({objectId: item.id})
               .update({status: -1})
               .then(function(r) {
+                item.set('status', -1);
                 $ionicPopup.alert({
                   'title': '提醒'
                   , 'template': '订单取消成功'

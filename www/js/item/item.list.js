@@ -5,9 +5,9 @@
     .module('item.list', ['order.factory'])
     .controller('ItemListCtrl', ItemListCtrl)
 
-    .$inject = ['$scope', '$location', 'order'];
+    .$inject = ['$scope', '$yikeUtils', 'order'];
 
-  function ItemListCtrl($scope, $location, order) {
+  function ItemListCtrl($scope, $yikeUtils, order) {
     $scope.tabStatus = 9;
     $scope.query = query;
     $scope.back = back;
@@ -32,11 +32,15 @@
     }
 
     function _open(path) {
-      $location.path(path);
+      $yikeUtils.go(path);
     }
 
     function orderCart() {
-      _open('/order-cart');
+      if (order.cart.length !== 0) {
+        _open('order-cart');
+      } else {
+        $yikeUtils.alertPopup('提示', '请先选择订单产品');
+      }
     }
 
     function query() {

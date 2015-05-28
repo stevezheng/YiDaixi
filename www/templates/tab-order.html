@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view cache-view="false">
     <ion-header-bar class="bar-balanced bar bar-header">
         <div class="row order-button-bar">
             <a class="col"></a>
@@ -19,7 +19,7 @@
       <p ng-if="active=='doing' && !doing" class="text-center">订单载入中...</p>
       <p ng-if="active=='doing' && doing.length == 0" class="balanced text-center">暂无服务中订单</p>
       <div ng-show="active=='doing'">
-          <div class="list order-list" ng-repeat="item in doing">
+          <div class="list order-list" ng-repeat="item in doing" ng-hide="item.get('status') == -1">
               <a class="item item-avatar" href="#">
                   <img src="img/order/progress-1.png" width="100%">
                   <p><i class="icon ion-ios-list-outline balanced"></i> 订单编号: {{item.id}}</p>
