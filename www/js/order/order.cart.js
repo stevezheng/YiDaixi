@@ -12,9 +12,6 @@
     $scope.cart = order.cart;
     $scope.open = _open;
 
-    console.log(order.cart);
-    console.dir(order.cart);
-
     init();
 
     //实现

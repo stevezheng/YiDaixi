@@ -126,18 +126,6 @@
               });
           }
         });
-      //$yikeUtils
-      //  .confirm('提醒', '是否使用余额支付该订单')
-      //  .then(function(result) {
-      //    if (result) {
-      //      var user = AV.User.current();
-      //
-      //      if (user.get('money') < item.get('cost')) {
-      //        $yikeUtils.alert('提醒', '余额不足，请先充值');
-      //        $yikeUtils.go('pay');
-      //      }
-      //    }
-      //  });
     }
   }
 })();
