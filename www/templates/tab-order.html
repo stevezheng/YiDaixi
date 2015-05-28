@@ -28,7 +28,7 @@
               </a>
               <div class="button-bar">
                   <a class="button button-balanced" ng-click="cancel(item)">取消订单</a>
-                  <a class="button button-balanced" ng-if="item.get('status') === 0">待支付</a>
+                  <a class="button button-balanced" ng-if="item.get('status') === 0" ng-click="pay(item)">支付订单</a>
               </div>
           </div>
       </div>

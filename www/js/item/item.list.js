@@ -39,7 +39,7 @@
       if (order.cart.length !== 0) {
         _open('order-cart');
       } else {
-        $yikeUtils.alertPopup('提示', '请先选择订单产品');
+        $yikeUtils.alert('提示', '请先选择订单产品');
       }
     }
 

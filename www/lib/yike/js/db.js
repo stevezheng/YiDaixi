@@ -197,7 +197,7 @@ function D(model) {
     },
 
     find: function () {
-
+      return q.first();
     },
 
     updateInc: function (field, step) {

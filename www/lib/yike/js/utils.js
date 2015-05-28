@@ -11,7 +11,9 @@
   function $yikeUtils($state, $ionicPopup) {
     return {
       go: go
-      , alertPopup: alertPopup
+      , alert: alert
+      , confirm: confirm
+      , show: show
     };
 
     ////////////////
@@ -20,11 +22,28 @@
       $state.go(target, params, options);
     }
 
-    function alertPopup(title, template) {
+    function alert(title, template) {
       return $ionicPopup.alert({
         title: title,
         template: template,
         okType: 'button-balanced'
+      });
+    }
+
+    function confirm(title, template) {
+      return $ionicPopup.confirm({
+        'title': title
+        , 'template': template
+        , 'okType': 'button-balanced'
+      });
+    }
+
+    function show(title, template, scope, buttons) {
+      return $ionicPopup.show({
+        title: title
+        , template: template
+        , scope: scope
+        , buttons: buttons
       });
     }
   }
