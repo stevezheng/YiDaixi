@@ -70,6 +70,8 @@
           console.error(err);
           if (err.code === 211) {
             alertPopup('提示', '该手机号未注册');
+          } else {
+            alertPopup('提示', '账号密码错误');
           }
         }
       });
