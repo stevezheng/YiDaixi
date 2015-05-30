@@ -174,7 +174,18 @@ function D(model) {
     },
 
     update: function (data) {
+      return q
+        .find()
+        .then(function (_instance) {
+          _instance = _instance[0];
+          var keys = AV._.keys(_instance.attributes);
+          for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            _instance.set(key, data[key]);
+          }
 
+          _instance.save();
+        });
     },
 
     select: function () {

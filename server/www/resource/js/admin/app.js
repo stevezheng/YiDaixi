@@ -3,7 +3,8 @@ AV.initialize(
   'wsu2o1gnk2v5flopz8tg1qyb1ogwnvh8isae958z4fzzrbkp',
   '8ryjfzqd4gek0aqqhkhja3rk2tbzyoy4yxjib6qx6qshnv9s');
 
-angular.module('app', ['ngRoute', 'utils', 'ad', 'address', 'home', 'setting', 'user', 'item', 'order', 'pay', 'withdraw'])
+angular.module('app',
+  ['ngRoute', 'utils', 'ad', 'address', 'home', 'setting', 'user', 'item', 'order', 'pay', 'withdraw'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -41,6 +42,10 @@ angular.module('app', ['ngRoute', 'utils', 'ad', 'address', 'home', 'setting', '
       .when('/withdraw', {
         templateUrl: 'resource/views/withdraw.html',
         controller: 'WithdrawListCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'resource/views/login.html',
+        controller: 'UserLoginCtrl'
       })
       .otherwise({
         redirectTo: '/'

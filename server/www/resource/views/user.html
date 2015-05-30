@@ -26,13 +26,17 @@
                     <tr>
                         <th>ID</th>
                         <th>账号</th>
+                        <th>手机号是否验证</th>
+                        <th>余额</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tr ng-repeat="d in data">
                         <td>{{d.id}}</td>
                         <td>{{d.get('username')}}</td>
-                        <td><button class="btn btn-danger btn-xs" ng-click="del(d)">删除</button></td>
+                        <td>{{d.get('mobilePhoneVerified')?'已验证':'未验证'}}</td>
+                        <td>{{d.get('money')}}</td>
+                        <td><button class="btn btn-danger btn-xs" ng-click="editMoney(d)">修改余额</button></td>
                     </tr>
                 </table>
                 <div class="text-center">

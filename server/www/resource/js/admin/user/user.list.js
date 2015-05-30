@@ -19,6 +19,7 @@
     $scope.openModal = openModal;
     $scope.del = del;
     $scope.query = query;
+    $scope.editMoney = editMoney;
 
     init();
 
@@ -57,8 +58,24 @@
       $(element).click();
     }
 
+    function editMoney(item) {
+      var r = window.prompt('正数增加，负数减少');
+      if (r) {
+        var money = Number(item.get('money')) + Number(r);
+        D('User')
+          .where({objectId: item.id})
+          .update({money: money})
+          .then(function(res) {
+            window.alert('修改成功');
+            query();
+          }, function(err) {
+            window.alert('修改失败');
+          });
+      }
+    }
+
     function del(item) {
-      D('user')
+      D('User')
         .where({objectId: item.id})
         .delete()
         .then(function () {
