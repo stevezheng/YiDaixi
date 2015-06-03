@@ -15,7 +15,12 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "cordova-plugin-statusbar"
+    "cordova-plugin-statusbar",
+    {
+      "id": "cn.jpush.phonegap.JPushPlugin",
+      "locator": "/Users/stevezheng/IOS/jpush-phonegap-plugin/"
+    },
+    "org.apache.cordova.device"
   ],
   "cordovaPlatforms": [
     "android"

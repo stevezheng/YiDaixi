@@ -28,7 +28,7 @@
     }
 
     function back() {
-      _open('/tab/home');
+      _open('tab.home');
     }
 
     function _open(path) {
